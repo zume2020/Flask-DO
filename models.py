@@ -27,9 +27,7 @@ class Schema:
         pass
 
 
-if __name__ == "__main__":
-    Schema()
-    app.run(debug=True)
+
 
 class ToDoModel:
     TABLENAME = "TODO"
