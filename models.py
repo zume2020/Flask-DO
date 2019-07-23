@@ -30,3 +30,18 @@ class Schema:
 if __name__ == "__main__":
     Schema()
     app.run(debug=True)
+
+class ToDoModel:
+    TABLENAME = "TODO"
+
+    def __init__(self):
+        self.conn = sqlite3.connect('todo.db')
+
+    def create(self, text, description):
+        query = f'insert into {TABLENAME} ' \
+                f'(Title, Description) ' \
+                f'values ("{text}","{description}")'
+        
+        result = self.conn.execute(query)
+        return result
+   # Similarly add functions to select, delete and update todo
