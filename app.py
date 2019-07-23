@@ -6,3 +6,7 @@ app = Flask(__name__)             # create an app instance
 def hello():                      # call method hello
     return "Hello World!"         # which returns "hello world"if __name__ == "__main__":        # on running python app.py
     app.run()                     # run the flask app
+
+@app.route("/todo", method=["POST"])
+def create_todo():
+    return ToDoService().create(request.get_json())
